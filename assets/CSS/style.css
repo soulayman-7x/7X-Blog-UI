@@ -217,3 +217,89 @@ main {
     box-shadow: var(--glow-blue-strong);
 }
 
+/* =========================== */
+/*     SECTION LABEL           */
+/* =========================== */
+.section-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-7x-blue);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.section-label::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: var(--color-7x-blue);
+    box-shadow: var(--glow-blue);
+}
+
+/* =========================== */
+/*     BUTTONS                 */
+/* =========================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.8rem 1.8rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent);
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+
+.btn:hover::before {
+    opacity: 1;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-7x-blue), #0099CC);
+    color: var(--bg-void);
+    border: 1px solid var(--color-7x-blue);
+    box-shadow: var(--glow-blue);
+}
+
+.btn-primary:hover {
+    box-shadow: var(--glow-blue-strong);
+    transform: translateY(-1px);
+    color: var(--bg-void);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--color-7x-blue);
+    border: 1px solid var(--glass-border-hover);
+}
+
+.btn-ghost:hover {
+    border-color: var(--color-7x-blue);
+    background: rgba(0, 212, 255, 0.06);
+    box-shadow: var(--glow-blue);
+    color: var(--color-7x-cyan);
+}
+
+.btn-arrow::after {
+    content: ' →';
+}
